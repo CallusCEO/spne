@@ -12,10 +12,21 @@
 }
 
 .acceuil {
-	min-height: 200vh;
+	min-height: 110vh;
 	background-color: var(--color-background);
 	display: flex;
 	flex-direction: column;
+	position: relative;
+
+	overflow: hidden;
+	border-radius: 0 0 clamp(20px, 5vw, 50px) clamp(20px, 5vw, 50px);
+	border-bottom: 3px solid var(--color-muted);
+
+	transition: margin 0.3s ease;
+}
+
+.acceuilMargin {
+	margin: 0 clamp(8px, 2vw, 32px);
 }
 
 .auroraContainer {
@@ -25,6 +36,14 @@
 	width: 100%;
 	height: 100%;
 	transform: rotate(180deg);
+}
+
+.auroraContainer2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .acceuilText {
@@ -61,6 +80,19 @@
 .animationEnter {
 	opacity: 0;
 	animation: enter-animation 0.5s ease-in-out forwards 0.7s;
+}
+
+.actions {
+	opacity: 0;
+	min-height: 100vh;
+	background-color: var(--color-background);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	border-top: 3px solid var(--color-muted);
+	border-radius: clamp(20px, 5vw, 50px);
+	margin: clamp(16px, 5vw, 64px);
+	overflow: hidden;
 }
 
 /* Responsive: stack columns on smaller screens */

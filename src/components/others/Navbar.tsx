@@ -29,19 +29,14 @@ export default function Navbar() {
 	const [open, setOpen] = useState(false);
 	return (
 		<div className={styles.container}>
-			<div>
-				{/* <Image src="/logo.png" alt="Logo" width={100} height={100} /> */}
-				<h1 className='text-2xl font-bold font-[var(--font-montserrat)]'>
-					SPNE
-				</h1>
+			<div className='flex items-center gap-2'>
+				<Image src='/logo_SPNE.png' alt='Logo' width={32} height={32} />
+				<h1 className='text-2xl font-bold font-[var(--font-montserrat)]'>SPNE</h1>
 			</div>
 			<NavigationMenu viewport={false} className={styles.navigationMenu}>
 				<NavigationMenuList>
 					<NavigationMenuItem>
-						<NavigationMenuLink
-							asChild
-							className={navigationMenuTriggerStyle()}
-						>
+						<NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
 							<Link href='/docs' className='bg-transparent'>
 								Acceuil
 							</Link>
@@ -69,12 +64,9 @@ export default function Navbar() {
 						</NavigationMenuContent>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
-						<NavigationMenuLink
-							asChild
-							className={navigationMenuTriggerStyle()}
-						>
+						<NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
 							<Link href='/docs' className='bg-transparent'>
-								Docs
+								A propos
 							</Link>
 						</NavigationMenuLink>
 					</NavigationMenuItem>
@@ -90,11 +82,7 @@ export default function Navbar() {
 						<Menu />
 					</Button>
 				</DropdownMenuTrigger>
-				<DropdownMenuContent
-					className='w-56'
-					align='start'
-					sideOffset={16}
-				>
+				<DropdownMenuContent className='w-56' align='start' sideOffset={16}>
 					<DropdownMenuGroup>
 						<DropdownMenuItem>Acceuil</DropdownMenuItem>
 					</DropdownMenuGroup>
