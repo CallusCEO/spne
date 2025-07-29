@@ -6,16 +6,14 @@ import styles from '@/styles/page.module.css';
 import Aurora from '@/components/react-bits/Aurora/Aurora';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useEffect, useState } from 'react';
+import DarkVeil from '@/components/react-bits/DarkVeil/DarkVeil';
+import CardSwap, { Card as CardSwapCard } from '@/components/react-bits/CardSwap/CardSwap';
 
 export default function Home() {
-	const [isDown, setIsDown] = useState(false);
+	const [downNumber, setDownNumber] = useState(0);
 	useEffect(() => {
 		function handleScroll() {
-			if (window.scrollY > 164) {
-				setIsDown(true);
-			} else {
-				setIsDown(false);
-			}
+			setDownNumber(window.scrollY);
 		}
 
 		// Call handler right away so state gets updated with initial scroll position
@@ -31,7 +29,7 @@ export default function Home() {
 			<Navbar />
 			<section
 				id='acceuil'
-				className={`${styles.acceuil} ${isDown ? styles.acceuilMargin : ''}`}
+				className={`${styles.acceuil} ${downNumber > 164 ? styles.acceuilMargin : ''}`}
 			>
 				<div className={styles.acceuilText}>
 					<p className={styles.title}>
@@ -70,7 +68,9 @@ export default function Home() {
 					/>
 				</div>
 			</section>
-			<section className={`${styles.actions} ${isDown ? styles.animationEnter : ''}`}>
+			<section
+				className={`${styles.actions} ${downNumber > 164 ? styles.animationEnter : ''}`}
+			>
 				<div className={styles.auroraContainer2}>
 					<Aurora
 						colorStops={['#ee7979', '#79ee79', '#ee7979']}
@@ -78,6 +78,137 @@ export default function Home() {
 						amplitude={0.5}
 						speed={1}
 					/>
+				</div>
+
+				{/* Actions list */}
+				{/* 1 - Apiculture */}
+				{/* 2 - Permaculture */}
+				{/* 3 - Aquaponie */}
+				{/* 4 - Menuiserie */}
+				{/* 5 - Elevage d'insectes */}
+				{/* 6 - Communication */}
+
+				{/* ------------ APICULTURE ------------ */}
+				<div className={`${styles.actionItem} justify-center`} id='apiculture'>
+					<p className={styles.actionTitle}>L'Apiculture: un engagement écologique.</p>
+					<p className={styles.actionDescription}>
+						La SPNE forme des <em>alchimiculteurs</em> pour s'occuper des ruches
+						dispersées en Provence !
+					</p>
+					<div className={styles.actionImage}>
+						<Image src='/image_20.jpg' alt='Apiculture' fill className='object-cover' />
+					</div>
+				</div>
+			</section>
+			<section
+				className={`${styles.actions} ${downNumber > 1264 ? styles.animationEnter : ''}`}
+			>
+				{/* ------------ PERMACULTURE ------------ */}
+				<div className={`${styles.actionItem}`} id='permaculture'>
+					<div className={styles.darkVeilContainer}>
+						<DarkVeil resolutionScale={2} />
+					</div>
+					<p className={`${styles.actionTitle} text-left`}>
+						La Permaculture: un engagement écologique.
+					</p>
+					<p className={`${styles.actionDescription} text-left`}>
+						Nous cultivons plantes médicinales et cactées dans des jardins 100% durables
+						!
+					</p>
+
+					<div className='w-full h-[424px] relative'>
+						<CardSwap
+							cardDistance={30}
+							verticalDistance={30}
+							delay={4000}
+							pauseOnHover={false}
+						>
+							<CardSwapCard className='w-full h-full bg-[rgba(255,255,255,0.3)] overflow-hidden'>
+								<div className='p-4 z-900 bg-[rgb(230,255,230)] flex gap-2 items-center'>
+									<div className={styles.dotLuma}></div>
+									<h3>Card 1</h3>
+								</div>
+								<div className='w-full h-full rounded-xl absolute'>
+									<Image
+										src='/image_5.jpg'
+										alt='Apiculture'
+										fill
+										className='object-cover'
+									/>
+								</div>
+							</CardSwapCard>
+							<CardSwapCard className='w-full h-full bg-[rgba(255,255,255,0.3)] overflow-hidden'>
+								<div className='p-4 z-900 bg-[rgb(230,255,230)] flex gap-2 items-center'>
+									<div className={styles.dotLuma}></div>
+									<h3>Card 1</h3>
+								</div>
+								<div className='w-full h-full rounded-xl absolute'>
+									<Image
+										src='/image_6.jpg'
+										alt='Apiculture'
+										fill
+										className='object-cover'
+									/>
+								</div>
+							</CardSwapCard>
+							<CardSwapCard className='w-full h-full bg-[rgba(255,255,255,0.3)] overflow-hidden'>
+								<div className='p-4 z-900 bg-[rgb(230,255,230)] flex gap-2 items-center'>
+									<div className={styles.dotLuma}></div>
+									<h3>Card 1</h3>
+								</div>
+								<div className='w-full h-full rounded-xl absolute'>
+									<Image
+										src='/image_7.jpg'
+										alt='Apiculture'
+										fill
+										className='object-cover'
+									/>
+								</div>
+							</CardSwapCard>
+							<CardSwapCard className='w-full h-full bg-[rgba(255,255,255,0.3)] overflow-hidden'>
+								<div className='p-4 z-900 bg-[rgb(230,255,230)] flex gap-2 items-center'>
+									<div className={styles.dotLuma}></div>
+									<h3>Card 1</h3>
+								</div>
+								<div className='w-full h-full rounded-xl absolute'>
+									<Image
+										src='/image_8.jpg'
+										alt='Apiculture'
+										fill
+										className='object-cover'
+									/>
+								</div>
+							</CardSwapCard>
+							<CardSwapCard className='w-full h-full bg-[rgba(255,255,255,0.3)] overflow-hidden'>
+								<div className='p-4 z-900 bg-[rgb(230,255,230)] flex gap-2 items-center'>
+									<div className={styles.dotLuma}></div>
+									<h3>Card 1</h3>
+								</div>
+								<div className='w-full h-full rounded-xl absolute'>
+									<Image
+										src='/image_9.jpg'
+										alt='Apiculture'
+										fill
+										className='object-cover'
+									/>
+								</div>
+							</CardSwapCard>
+							<CardSwapCard className='w-full h-full bg-[rgba(255,255,255,0.3)] overflow-hidden'>
+								<div className='p-4 z-900 bg-[rgb(230,255,230)] flex gap-2 items-center'>
+									<div className={styles.dotLuma}></div>
+									<h3>Card 1</h3>
+								</div>
+								<div className='w-full h-full rounded-xl absolute'>
+									<Image
+										src='/image_10.jpg'
+										alt='Apiculture'
+										fill
+										className='object-cover'
+									/>
+								</div>
+							</CardSwapCard>
+						</CardSwap>
+					</div>
 				</div>
 			</section>
 		</div>

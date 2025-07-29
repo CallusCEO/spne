@@ -47,18 +47,24 @@ export default function Navbar() {
 							Nos actions
 						</NavigationMenuTrigger>
 						<NavigationMenuContent>
-							<ul className='grid w-[164px] gap-2 md:grid-cols-2'>
+							<ul className='grid w-[280px] gap-2 md:grid-cols-2'>
 								<li>
-									<Button variant='ghost'>Action 1</Button>
+									<Button variant='ghost'>Apiculture</Button>
 								</li>
 								<li>
-									<Button variant='ghost'>Action 2</Button>
+									<Button variant='ghost'>Permaculture</Button>
 								</li>
 								<li>
-									<Button variant='ghost'>Action 3</Button>
+									<Button variant='ghost'>Aquaponie</Button>
 								</li>
 								<li>
-									<Button variant='ghost'>Action 4</Button>
+									<Button variant='ghost'>Menuiserie</Button>
+								</li>
+								<li>
+									<Button variant='ghost'>Elevage d'insectes</Button>
+								</li>
+								<li>
+									<Button variant='ghost'>Communication</Button>
 								</li>
 							</ul>
 						</NavigationMenuContent>
