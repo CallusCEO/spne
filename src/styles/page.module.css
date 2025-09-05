@@ -31,9 +31,10 @@
 
 	overflow: hidden;
 	border-radius: 0 0 clamp(20px, 5vw, 50px) clamp(20px, 5vw, 50px);
-	border-bottom: 3px solid var(--color-muted);
+	/* border-bottom: 3px solid var(--color-muted); */
 
 	transition: margin 0.3s ease;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .acceuilMargin {
@@ -90,7 +91,7 @@
 
 .animationEnter {
 	opacity: 0;
-	animation: enter-animation 0.5s ease-in-out forwards 0.7s;
+	animation: enter-animation 0.3s ease-in-out forwards 0.7s;
 }
 
 .actions {
@@ -99,10 +100,11 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	border-top: 3px solid var(--color-muted);
+	/* border-top: 3px solid var(--color-muted); */
 	border-radius: clamp(20px, 5vw, 50px);
 	margin: clamp(16px, 5vw, 64px);
 	overflow: hidden;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .actionItem {
@@ -110,6 +112,7 @@
 	z-index: 10;
 	padding: clamp(64px, 10vw, 224px) clamp(16px, 10vw, 124px);
 	overflow: hidden;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .actionTitle {
@@ -158,6 +161,12 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+.plasmaContainer {
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 .dotLuma {

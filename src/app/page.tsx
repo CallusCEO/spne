@@ -4,18 +4,10 @@ import Navbar from '@/components/others/Navbar';
 import Image from 'next/image';
 import styles from '@/styles/page.module.css';
 import Aurora from '@/components/react-bits/Aurora/Aurora';
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useEffect, useState } from 'react';
 import DarkVeil from '@/components/react-bits/DarkVeil/DarkVeil';
-import CardSwap, {
-	Card as CardSwapCard,
-} from '@/components/react-bits/CardSwap/CardSwap';
+import CardSwap, { Card as CardSwapCard } from '@/components/react-bits/CardSwap/CardSwap';
 import LiquidChrome from '@/components/react-bits/Liquid/LiquidChrome';
 import Beams from '@/components/react-bits/Beams/Beams';
 import Plasma from '@/components/react-bits/Plasma/Plasma';
@@ -36,13 +28,22 @@ export default function Home() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 	return (
-		<div className='min-h-screen overflow-x-hidden'>
+		<div className='min-h-screen overflow-x-hidden relative'>
 			<Navbar />
+			<div className='absolute top-0 left-0 w-full h-full'>
+				<div className={styles.plasmaContainer}>
+					<Plasma
+						color='#66ff66'
+						speed={0.6}
+						scale={1}
+						opacity={0.3}
+						mouseInteractive={false}
+					/>
+				</div>
+			</div>
 			<section
 				id='acceuil'
-				className={`${styles.acceuil} ${
-					downNumber > 164 ? styles.acceuilMargin : ''
-				}`}
+				className={`${styles.acceuil} ${downNumber > 164 ? styles.acceuilMargin : ''}`}
 			>
 				<div className={styles.acceuilText}>
 					<p className={styles.title}>
@@ -55,8 +56,7 @@ export default function Home() {
 						>
 							<CardHeader className='justify-center items-start flex flex-col'>
 								<CardTitle className='w-fit font-bold text-2xl font-[var(--font-montserrat)]'>
-									Sensibilisation, Protection, Nature et
-									Environnement
+									Sensibilisation, Protection, Nature et Environnement
 								</CardTitle>
 								<CardDescription className='w-fit font-[var(--font-montserrat)]'>
 									Sous-titre de la card
@@ -83,9 +83,7 @@ export default function Home() {
 				</div>
 			</section>
 			<section
-				className={`${styles.actions} ${
-					downNumber > 164 ? styles.animationEnter : ''
-				}`}
+				className={`${styles.actions} ${downNumber > 164 ? styles.animationEnter : ''}`}
 			>
 				<div className={styles.auroraContainer2}>
 					<Aurora
@@ -105,31 +103,19 @@ export default function Home() {
 				{/* 6 - Communication */}
 
 				{/* ------------ APICULTURE ------------ */}
-				<div
-					className={`${styles.actionItem} justify-center`}
-					id='apiculture'
-				>
-					<p className={styles.actionTitle}>
-						L'Apiculture: un engagement écologique.
-					</p>
+				<div className={`${styles.actionItem} justify-center`} id='apiculture'>
+					<p className={styles.actionTitle}>L'Apiculture: un engagement écologique.</p>
 					<p className={styles.actionDescription}>
-						La SPNE forme des <em>alchimiculteurs</em> pour
-						s'occuper des ruches dispersées en Provence !
+						La SPNE forme des <em>alchimiculteurs</em> pour s'occuper des ruches
+						dispersées en Provence !
 					</p>
 					<div className={styles.actionImage}>
-						<Image
-							src='/image_20.jpg'
-							alt='Apiculture'
-							fill
-							className='object-cover'
-						/>
+						<Image src='/image_20.jpg' alt='Apiculture' fill className='object-cover' />
 					</div>
 				</div>
 			</section>
 			<section
-				className={`${styles.actions} ${
-					downNumber > 1264 ? styles.animationEnter : ''
-				}`}
+				className={`${styles.actions} ${downNumber > 1264 ? styles.animationEnter : ''}`}
 			>
 				{/* ------------ PERMACULTURE ------------ */}
 				<div className={`${styles.actionItem}`} id='permaculture'>
@@ -140,8 +126,8 @@ export default function Home() {
 						La Permaculture: un engagement écologique.
 					</p>
 					<p className={`${styles.actionDescription} text-left`}>
-						Nous cultivons plantes médicinales et cactées dans des
-						jardins 100% durables !
+						Nous cultivons plantes médicinales et cactées dans des jardins 100% durables
+						!
 					</p>
 
 					<div className='w-full h-[224px] md:h-[424px] relative'>
@@ -240,32 +226,31 @@ export default function Home() {
 				</div>
 			</section>
 			<section
-				className={`${styles.actions} ${
-					downNumber > 1664 ? styles.animationEnter : ''
-				}`}
+				className={`${styles.actions} ${downNumber > 2064 ? styles.animationEnter : ''}`}
 			>
 				{/* ------------ AQUAPONIE ------------ */}
 				<div className={`${styles.actionItem}`} id='aquaponie'>
-					<div className={styles.liquidChromeContainer}>
-						<LiquidChrome
-							baseColor={[0.1, 0.1, 0.8]}
-							speed={0.3}
-							amplitude={0.4}
-						/>
+					<div className='absolute top-0 left-0 w-full h-full'>
+						<div className={styles.plasmaContainer}>
+							<Plasma
+								color='#00BFFF'
+								direction='forward'
+								speed={1}
+								scale={3}
+								opacity={1}
+								mouseInteractive={false}
+							/>
+						</div>
 					</div>
-					<p className={styles.actionTitle}>
-						L'Aquaponie: l'élevage de poissons!
-					</p>
+					<p className={styles.actionTitle}>L'Aquaponie: l'élevage de poissons!</p>
 					<p className={styles.actionDescription}>
-						Nous élevons ces petits êtres marins dans des milieux
-						aquatiques durables et naturels.
+						Nous élevons ces petits êtres marins dans des milieux aquatiques durables et
+						naturels.
 					</p>
 				</div>
 			</section>
 			<section
-				className={`${styles.actions} ${
-					downNumber > 2064 ? styles.animationEnter : ''
-				}`}
+				className={`${styles.actions} ${downNumber > 2664 ? styles.animationEnter : ''}`}
 			>
 				{/* ------------ MENUISERIE ------------ */}
 				<div className={`${styles.actionItem}`} id='menuiserie'>
@@ -288,9 +273,37 @@ export default function Home() {
 						Nous créons nous mêmes nos ruches!
 					</p>
 					<div className={styles.actionImage}>
+						<Image src='/image_16.jpg' alt='Menuiserie' fill className='object-cover' />
+					</div>
+				</div>
+			</section>
+			<section
+				className={`${styles.actions} ${downNumber > 3064 ? styles.animationEnter : ''}`}
+			>
+				{/* ------------ ELEVAGE D'INSECTES ------------ */}
+				<div className={`${styles.actionItem}`} id='elevage'>
+					<div className='absolute top-0 left-0 w-full h-full'>
+						<div className={styles.plasmaContainer}>
+							<Plasma
+								color='#ff6b35'
+								speed={0.6}
+								scale={1}
+								opacity={0.8}
+								mouseInteractive={false}
+							/>
+						</div>
+					</div>
+					<p className={`${styles.actionTitle}`}>
+						L'Elevage d'Insectes au coeur de notre savoir-faire.
+					</p>
+					<p className={`${styles.actionDescription}`}>
+						Nous élevons des insectes pour des produits naturels! Par exemple, nos
+						abeilles nous fournissent le miel nécessaire à notre activité.
+					</p>
+					<div className={styles.actionImage}>
 						<Image
 							src='/image_16.jpg'
-							alt='Menuiserie'
+							alt="Elevage d'Insectes"
 							fill
 							className='object-cover'
 						/>
@@ -298,34 +311,32 @@ export default function Home() {
 				</div>
 			</section>
 			<section
-				className={`${styles.actions} ${
-					downNumber > 2464 ? styles.animationEnter : ''
-				}`}
+				className={`${styles.actions} ${downNumber > 3664 ? styles.animationEnter : ''}`}
 			>
-				{/* ------------ ELEVAGE D'INSECTES ------------ */}
-				<div className={`${styles.actionItem}`} id='elevage'>
-					{/* <div className={styles.liquidChromeContainer}>
-						<Plasma
-							color='#ff6b35'
-							speed={0.6}
-							direction='forward'
-							scale={1}
-							opacity={0.8}
-							mouseInteractive={false}
-						/>
-					</div> */}
+				{/* ------------ COMMUNICATION ------------ */}
+				<div className={`${styles.actionItem}`} id='communication'>
+					<div className='absolute top-0 left-0 w-full h-full'>
+						<div className={styles.plasmaContainer}>
+							<Plasma
+								color='#ff6b35'
+								speed={0.6}
+								scale={1}
+								opacity={0.8}
+								mouseInteractive={false}
+							/>
+						</div>
+					</div>
 					<p className={`${styles.actionTitle}`}>
-						L'Elevage d'Insectes au coeur de notre savoir-faire.
+						La Communication: notre engagement pour la protection de la nature.
 					</p>
 					<p className={`${styles.actionDescription}`}>
-						Nous élevons des insectes pour des produits naturels!
-						Par exemple, nos abeilles nous fournissent le miel
-						nécessaire à notre activité.
+						Nous communiquons sur les actions de la SPNE pour sensibiliser à la
+						protection de la nature.
 					</p>
 					<div className={styles.actionImage}>
 						<Image
 							src='/image_16.jpg'
-							alt="Elevage d'Insectes"
+							alt='Communication'
 							fill
 							className='object-cover'
 						/>
