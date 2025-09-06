@@ -8,9 +8,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useEffect, useState } from 'react';
 import DarkVeil from '@/components/react-bits/DarkVeil/DarkVeil';
 import CardSwap, { Card as CardSwapCard } from '@/components/react-bits/CardSwap/CardSwap';
-import LiquidChrome from '@/components/react-bits/Liquid/LiquidChrome';
+import LightRays from '@/components/react-bits/LightRays/LightRays';
 import Beams from '@/components/react-bits/Beams/Beams';
 import Plasma from '@/components/react-bits/Plasma/Plasma';
+import { LucidePhone } from 'lucide-react';
 
 export default function Home() {
 	const [downNumber, setDownNumber] = useState(0);
@@ -311,36 +312,37 @@ export default function Home() {
 				</div>
 			</section>
 			<section
-				className={`${styles.actions} ${downNumber > 3664 ? styles.animationEnter : ''}`}
+				className={`${styles.communication} ${
+					downNumber > 3464 ? styles.animationEnter : ''
+				}`}
+				id='communication'
 			>
 				{/* ------------ COMMUNICATION ------------ */}
-				<div className={`${styles.actionItem}`} id='communication'>
-					<div className='absolute top-0 left-0 w-full h-full'>
-						<div className={styles.plasmaContainer}>
-							<Plasma
-								color='#ff6b35'
-								speed={0.6}
-								scale={1}
-								opacity={0.8}
-								mouseInteractive={false}
-							/>
-						</div>
-					</div>
-					<p className={`${styles.actionTitle}`}>
-						La Communication: notre engagement pour la protection de la nature.
-					</p>
-					<p className={`${styles.actionDescription}`}>
-						Nous communiquons sur les actions de la SPNE pour sensibiliser à la
-						protection de la nature.
-					</p>
-					<div className={styles.actionImage}>
-						<Image
-							src='/image_16.jpg'
-							alt='Communication'
-							fill
-							className='object-cover'
+
+				<div className='absolute top-0 left-0 w-full h-full'>
+					<div className={styles.plasmaContainer}>
+						<LightRays
+							raysOrigin='top-center'
+							raysColor='#66ff66'
+							raysSpeed={1.5}
+							lightSpread={0.8}
+							rayLength={1.2}
+							followMouse={true}
+							mouseInfluence={0.1}
+							noiseAmount={0.1}
+							distortion={0.05}
+							className='custom-rays'
 						/>
 					</div>
+				</div>
+				<p className={styles.actionTitle}>Contactez-nous</p>
+				<p className={styles.actionDescription}>
+					Mais avant, voyez comment notre association agit sur grand écran !
+				</p>
+				{/* icon phone */}
+				<div className='flex justify-center items-center mt-12'>
+					<LucidePhone className='text-[#000]' />
+					<p className='text-[#000] ml-2'>06 66 66 66 66</p>
 				</div>
 			</section>
 		</div>

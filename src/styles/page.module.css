@@ -115,6 +115,15 @@
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+.communication {
+	padding: clamp(64px, 5vw, 224px) clamp(16px, 10vw, 124px);
+	overflow: hidden;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	max-height: 100vh;
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
 .actionTitle {
 	font-size: clamp(32px, 5vw, 64px);
 	font-family: var(--font-montserrat);
